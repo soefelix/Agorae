@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-feature 'Enrichir son profil avec une compétence / centre d intérêt existant' do
+feature 'Enrichir son profil avec des ressources secondaires' do
 
-  scenario 'ajouter par le bouton plus' do
+  scenario 'ajouter une référence' do
       visit $home_page
       click_on 'Se connecter'
       log_in_as 'alice', 'lapinblanc'
@@ -10,8 +10,8 @@ feature 'Enrichir son profil avec une compétence / centre d intérêt existant'
       click_on_link 'Baptiste BAINIER'
       toggle_edit
       click_plus_sign_next_to 'local-resource'
-      fill_in 'Nom : ', :with => 'Guillaume DOYEN(referent)'
-      fill_in 'Adresse : ', :with => 'http://guillaume-doyen.fr'
+      fill_in 'attributename', :with => 'Guillaume DOYEN(referent)'
+      fill_in 'attributevalue', :with => 'http://guillaume-doyen.fr'
       click_on 'Référencer'
     end
 end
